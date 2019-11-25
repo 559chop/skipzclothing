@@ -7,7 +7,7 @@ import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component'
 import AuthenticationPage from './pages/authentication/authentication.component'
 import Header from './components/header/header.component'
-import { auth } from './firebase/firebase.util'
+import { auth, createUserProfileDocument } from './firebase/firebase.util'
 
 class App extends React.Component {
   constructor () {
@@ -22,8 +22,22 @@ class App extends React.Component {
 
   componentDidMount () {
     // open subscription with firebase, only update if authstate have changed
-    auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user })
+    auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        // calls our createUserProfile function and passing in userAuth if it exists
+        const userRef = await createUserProfileDocument(userAuth)
+
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              // use .data() what the data is in snapshot
+              ...snapshot.data()
+            }
+          })
+        })
+      }
+      this.setState({ currentUser: userAuth })
     })
   }
 
