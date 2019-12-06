@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { auth } from '../../firebase/firebase.util'
 import CartIcon from '../cart-icon/cart-icon.component'
+
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import './header.style.scss'
+import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, cartToggle }) => {
   return (
     <div className='header'>
       <Link className='logo-container' to='/'>
@@ -30,12 +32,14 @@ const Header = ({ currentUser }) => {
         )}
         <CartIcon />
       </div>
+      {cartToggle ? null : <CartDropdown />}
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  cartToggle: state.cart.hidden
 })
 
 export default connect(mapStateToProps)(Header)
