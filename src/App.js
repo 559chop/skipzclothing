@@ -52,7 +52,13 @@ class App extends React.Component {
 
           <Route
             path='/signin'
-            render={() => (this.props.currentUser ? <Redirect to='/' /> : <AuthenticationPage />)}
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <AuthenticationPage />
+              )
+            }
           />
         </Switch>
       </div>
@@ -68,7 +74,4 @@ const mapStateToProps = state => ({
   currentUser: selectCurrentUser(state)
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
