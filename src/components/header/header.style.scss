@@ -1,15 +1,17 @@
 .header {
-    height: 70px;
+    height: 20px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 25px;
     font-size: 18px;
 
-    .logo-container {
+    .brand-logo {
         height: 100%;
-        width: 70px;
-        padding: 25px;
+        font-size: 2rem;
+        font-weight: 100;
+
+        ;
     }
 
     .options {

@@ -6,16 +6,12 @@ import CartIcon from '../cart-icon/cart-icon.component'
 import { selectCurrentUser } from '../../redux/user/user.selectors'
 import { selectCartToggle } from '../../redux/cart/cart.selectors'
 
-import { ReactComponent as Logo } from '../../assets/crown.svg'
 import './header.style.scss'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
 const Header = ({ currentUser, cartToggle }) => {
   return (
     <div className='header'>
-      <Link className='logo-container' to='/'>
-        <Logo className='logo' />
-      </Link>
       <div className='options'>
         <Link className='option' to='/shop'>
           SHOP
