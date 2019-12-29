@@ -39,7 +39,6 @@ const switchRoutes = (
 
 const Layout = ({ location, currentUser }) => {
   const classes = layoutStyle()
-  const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
   const getRoute = () => {
@@ -89,13 +88,12 @@ const Layout = ({ location, currentUser }) => {
               }
             })}
           </List>
-          <IconButton>
+          <IconButton onClick={() => auth.signOut()}>
             {currentUser ? (
               <FontAwesomeIcon
                 icon={faSignOutAlt}
                 size={'lg'}
                 color='#6432ed'
-                onClick={() => auth.signOut()}
                 to='/signin'
               />
             ) : (

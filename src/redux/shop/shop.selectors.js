@@ -13,7 +13,7 @@ export const selectShopCollections = createSelector(
 //converts shop collections object into an array of keys and map
 export const selectCollectionsForPreview = createSelector(
     [selectShopCollections],
-    collections => Object.keys(collections).map(key => collections[key])
+    collections => (collections ? Object.keys(collections).map(key => collections[key]) : null)
 )
 export const selectCollection = collectionUrlParam =>
     createSelector(
