@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans Condensed';
-  padding: 5vh 10vh;
   background-color: #F0F0F0;
+
 }
 
 a {
@@ -12,3 +12,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* #6432ed */

@@ -1,4 +1,9 @@
 .collections-overview {
     display: flex;
     flex-direction: column;
+
+    .collection-item {
+        grid-gap: 10px;
+
+    }
 }

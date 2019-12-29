@@ -6,7 +6,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.util'
 import { setCurrentUser } from './redux/user/user.actions'
 import { selectCurrentUser } from './redux/user/user.selectors'
 
-import Layout from './components/layout/layout.component'
+import Layout from './layout/layout.component'
 
 class App extends React.Component {
   unsubscribeFromAuth = null
@@ -39,7 +39,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Layout currentUser={this.props.currentUser} />
+        <Layout currentUser={this.props.currentUser} />{' '}
       </div>
     )
   }

@@ -1,7 +1,7 @@
-import HomePage from '../../pages/homepage/homepage.component'
-import ShopPage from '../../pages/shop/shop.component'
-import AuthenticationPage from '../../pages/authentication/authentication.component'
-import CheckoutPage from '../../pages/checkout/checkout.component'
+import HomePage from '../pages/homepage/homepage.component'
+import ShopPage from '../pages/shop/shop.component'
+import AuthenticationPage from '../pages/authentication/authentication.component'
+import CheckoutPage from '../pages/checkout/checkout.component'
 
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";

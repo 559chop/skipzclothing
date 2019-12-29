@@ -2,7 +2,7 @@ import {
     makeStyles
 } from '@material-ui/core/styles'
 
-const drawerWidth = 240
+const drawerWidth = 100;
 
 
 export const layoutStyle = makeStyles(theme => ({
@@ -55,7 +55,7 @@ export const layoutStyle = makeStyles(theme => ({
             duration: theme.transitions.duration.leavingScreen
         }),
         overflowX: 'hidden',
-        width: theme.spacing(9),
+        width: theme.spacing(8),
         // [theme.breakpoints.up('sm')]: {
         //     width: theme.spacing(9) + 1
         // },
@@ -68,7 +68,6 @@ export const layoutStyle = makeStyles(theme => ({
 
     },
     content: {
-        flexGrow: 1,
-        padding: theme.spacing(3)
+        padding: theme.spacing(2, 0, 2, 0),
     }
 }))
